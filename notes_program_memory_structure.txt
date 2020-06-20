@@ -1,0 +1,90 @@
+C:\training\c_exercises\c_program_memory_structure>dir
+ Volume in drive C has no label.
+ Volume Serial Number is 6462-F81F
+
+ Directory of C:\training\c_exercises\c_program_memory_structure
+
+06/20/2020  12:58 PM    <DIR>          .
+06/20/2020  12:58 PM    <DIR>          ..
+06/20/2020  12:35 PM             3,894 notes_program_memory_structure.txt
+06/20/2020  12:11 PM                32 program_memory_structure.c
+06/20/2020  12:56 PM            47,737 program_memory_structure.exe
+06/20/2020  12:12 PM                33 program_memory_structure01.c
+06/20/2020  12:57 PM            47,739 program_memory_structure01.exe
+06/20/2020  12:17 PM               115 program_memory_structure02.c
+06/20/2020  12:57 PM            47,774 program_memory_structure02.exe
+06/20/2020  12:22 PM               185 program_memory_structure03.c
+06/20/2020  12:57 PM            47,792 program_memory_structure03.exe
+06/20/2020  12:24 PM               187 program_memory_structure04.c
+06/20/2020  12:58 PM            47,792 program_memory_structure04.exe
+06/20/2020  12:26 PM               189 program_memory_structure05.c
+06/20/2020  12:58 PM            47,792 program_memory_structure05.exe
+              13 File(s)        291,261 bytes
+               2 Dir(s)  619,873,570,816 bytes free
+
+C:\training\c_exercises\c_program_memory_structure>cat program_memory_structure.c
+int main(void){
+        return 0;
+}
+
+C:\training\c_exercises\c_program_memory_structure>size program_memory_structure.exe
+   text    data     bss     dec     hex filename
+   8800    1532    1004   11336    2c48 program_memory_structure.exe
+
+C:\training\c_exercises\c_program_memory_structure>cat program_memory_structure01.c
+void main(void){
+        while(1);
+}
+
+C:\training\c_exercises\c_program_memory_structure>size program_memory_structure01.exe
+   text    data     bss     dec     hex filename
+   8780    1532    1004   11316    2c34 program_memory_structure01.exe
+
+C:\training\c_exercises\c_program_memory_structure>cat program_memory_structure02.c
+int global_variable;    /* Uninitialized global_variable stored in bss section */
+
+void main(void){
+        while(1);
+}
+
+C:\training\c_exercises\c_program_memory_structure>size program_memory_structure02.exe
+   text    data     bss     dec     hex filename
+   8780    1532    1008   11320    2c38 program_memory_structure02.exe
+
+C:\training\c_exercises\c_program_memory_structure>cat program_memory_structure03.c
+int global_variable;    /* Uninitialized global_variable stored in bss section */
+
+void main(void){
+        static int i;           /* Uninitialized static int stored in bss section */
+        while(1);
+}
+
+C:\training\c_exercises\c_program_memory_structure>size program_memory_structure03.exe
+   text    data     bss     dec     hex filename
+   8780    1532    1008   11320    2c38 program_memory_structure03.exe
+
+C:\training\c_exercises\c_program_memory_structure>cat program_memory_structure04.c
+int global_variable;    /* Uninitialized global_variable stored in bss section */
+
+void main(void){
+        static int i = 1;       /* Initialized static int stored in data section */
+        while(1);
+}
+
+C:\training\c_exercises\c_program_memory_structure>size program_memory_structure04.exe
+   text    data     bss     dec     hex filename
+   8780    1536    1008   11324    2c3c program_memory_structure04.exe
+
+C:\training\c_exercises\c_program_memory_structure>cat program_memory_structure05.c
+int global_variable = 2;/* Initialized global_variable stored in data section */
+
+void main(void){
+        static int i = 1;       /* Initialized static int stored in data section */
+        while(1);
+}
+
+C:\training\c_exercises\c_program_memory_structure>size program_memory_structure05.exe
+   text    data     bss     dec     hex filename
+   8780    1540    1004   11324    2c3c program_memory_structure05.exe
+
+C:\training\c_exercises\c_program_memory_structure>
